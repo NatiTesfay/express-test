@@ -32,7 +32,7 @@ const travels = [
     cities:"Sofia,Plovdiv ,Varna"
 },
     {id:8,
-    countryName:"italy ",
+    countryName:"Italy ",
     cities:"Rome,Milan ,Naples"
 },
    
