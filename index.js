@@ -1,13 +1,14 @@
 const express = require("express");
 const app = express();
+
 const cors =require("cors");
-const fs = require("fs");
 const port = 8000;
 
 
 app.use(cors())
 app.use(express.json({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
+
 let user = ["nati,avi,asi,ami,rami,dalia,shlomo,dani,or,gad"];
 let students = [
     {name:"nati",lastName:"tesfay",age:25,id:1},
@@ -54,16 +55,6 @@ app.get("/addteacher",(req,res)=>{
     })
 })
 
-//////////////////////////////////////////////////
-// app.put("/upDatastudents/:id",(req,res)=>{
-//    const userIndex = findUserIndex(req);
-//    if (userIndex > -1) {
-//     students[userIndex] = req.body.user;
-//     return res.send(students)
-//    }
-//    res.send("user not found");
-// })
-///////////////////////////////////////////////////
 
 app.delete('/student/delete/:id', (req, res) => {
     const startIndex = findUserIndex(req);
