@@ -35,7 +35,10 @@ const travels = [
     countryName:"Italy ",
     cities:"Rome,Milan ,Naples"
 },
-   
+    {id:9,
+    countryName:"Thailand  ",
+    cities:"Bangkok,Phuket ,Sukhothai"
+},
 ]
 
 module.exports = {
