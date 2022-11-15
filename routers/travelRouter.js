@@ -1,19 +1,17 @@
-const routerTravel = require("express").Router()
+const routingTravel = require("express").Router()
 
 const  {
     getCountry,
     upDataCountryById,
     deleteCountry,
     getCountryById
-    
-    // addCountry,
 } = require("../controllers/travel-ctrl");
 
 
-routerTravel.get("/",getCountry)
-routerTravel.put("/upDataCountry/:id",upDataCountryById)
-routerTravel.delete("/deleteCountry/",deleteCountry)
-routerTravel.get("/getById/:id",getCountryById)
+routingTravel.get("/",getCountry)
+routingTravel.put("/upDataCountry/:id",upDataCountryById)
+routingTravel.delete("/deleteCountry/",deleteCountry)
+routingTravel.get("/getById/:id",getCountryById)
 
 
-module.exports = routerTravel;
+module.exports = routingTravel;

@@ -2,8 +2,12 @@ const express = require("express");
 const app = express();
 const cors =require("cors");
 const port = 8080;
-const routing = require("./routers/travelRouter")
-app.use("/travels", routing)
+const routingTravel = require("./routers/travelRouter")
+const routerFlights = require("./routers/flightsRouter")
+const routerflightAirPort = require("./routers/flightAirPortRouter");
+app.use("/travels", routingTravel)
+app.use("/flights",routerFlights)
+app.use("/flightAirPort",routerflightAirPort)
 app.use(cors())
 app.use(express.json({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
