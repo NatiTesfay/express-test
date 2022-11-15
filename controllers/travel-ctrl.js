@@ -2,16 +2,26 @@ const countries = require("../models/travel-models")
 
 
 const getCountry = (req,res) =>{
-    res.send(countries)
+    res.send( countries)
 }
 
-// const getCountryById = (req,res)=>{
-//     findIndex(req, res);
-//   }
+const upDataCountryById =(req,res)=>{
+    findUserIndex(req,res)
+    req.send(countries[req.params.id])
+}
 
-// const postCountry = (req,res) =>{
-//     findUserIndex(req,res)
-// }
+const deleteCountry = (req,res)=>{
+    const deleteIndex = findUserIndex(req);
+    const userIndex = countries.splice(deleteIndex,1)
+    userIndex ? res.send(country) : res.send("error")
+}
+
+const getCountryById = (req,res)=>{
+    res.send(countries[req.params.id]);
+}
+
+
+ 
 
 // const deleteCountry = (req, res) => {
 //         const startIndex = findUserIndex(req);
@@ -26,20 +36,21 @@ const getCountry = (req,res) =>{
 //             return res.send(students)
 //            }
 //            res.send("user not found");
-//         }
+        
 
-//     function findUserIndex(req) {
-//         const userItem = students.find(user => user.id == req.params.id);
-//         const startIndex = students.indexOf(userItem);
-//         return startIndex;
-//     }
+    function findUserIndex(req) {
+        const userItem = countries.find(user => user.id == req.params.id);
+        const startIndex = countries.indexOf(userItem);
+        return startIndex;
+    }
 
 
 
 module.exports = {
     getCountry,
-    // getCountryById,
-    // postCountry,
+    upDataCountryById,
+    deleteCountry,
+    getCountryById,
     // deleteCountry,
     // addCountry,
 }

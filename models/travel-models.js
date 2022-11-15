@@ -59,6 +59,4 @@ const travels = [
 },
 ]
 
-module.exports = {
-    travels
-}
+module.exports = travels
