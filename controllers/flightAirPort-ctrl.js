@@ -12,10 +12,10 @@ const postAirport = (req,res)=>{
 }
 
 const getAirPortsById = (req,res)=>{
- const flightId = airports.find((airPort) => airPort.id == req.params.id);
- if (flightId > -1) {
-    airports[flightId] = req.body.data
- }
+ flightId = airports.find(airPort => airPort.id == req.params.id);
+ itemIndex=airports.indexOf(flightId)
+    airports[itemIndex] = req.body.data
+    res.send({massage:'all good', airports})
   
 }
 
