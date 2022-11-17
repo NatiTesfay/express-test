@@ -23,7 +23,6 @@ const getCountryById = (req,res)=>{
 
 
  
-
 // const deleteCountry = (req, res) => {
 //         const startIndex = findUserIndex(req);
 //         const as = users.splice(startIndex, 1)
@@ -52,6 +51,4 @@ module.exports = {
     upDataCountryById,
     deleteCountry,
     getCountryById,
-    // deleteCountry,
-    // addCountry,
 }

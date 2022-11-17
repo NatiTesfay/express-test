@@ -1,4 +1,5 @@
 const airports = require("../models/flightAirPort-models");
+const {validateEmail} = require("../validation/userValid")
 
 const getAllAirport = (req,res)=>{
     res.send(airports)
@@ -6,7 +7,10 @@ const getAllAirport = (req,res)=>{
 }
 
 const postAirport = (req,res)=>{
-    airports.push(req.body)
+    if (validateEmail(req.body)) {
+        
+    }
+    airports.push(req.body.user)
     res.send({massage:"country added"})
 
 }
